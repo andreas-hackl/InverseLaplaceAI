@@ -18,6 +18,19 @@ Since, in practice, we lack prior information about the spectrum, I have chosen 
 
 In `example.py`, an example calculation demonstrates the approach using a predefined correlation function. The noise in the correlation function is artificially generated using a noise model inspired by the Lepage argument, with Gaussian-distributed deviations from the mean correlator.
 
+### Results
+
+The results for `example.py`, obtained after 100 training epochs, are as follows:
+
+- **A₀**: Expected: 0.5000, Predicted: 0.4569557 ± 0.0000061  
+- **A₁**: Expected: 0.3000, Predicted: 0.3021244 ± 0.0000097  
+- **A₂**: Expected: 0.2000, Predicted: 0.2408266 ± 0.0000102  
+- **E₀**: Expected: 0.6000, Predicted: 0.5940353 ± 0.0000028  
+- **E₁**: Expected: 0.9000, Predicted: 0.8352580 ± 0.0000121  
+- **E₂**: Expected: 1.2000, Predicted: 1.1914995 ± 0.0000205  
+
+
+
 ### Interpretation of the Results
 
 The chosen model does not appear to accurately calculate the parameters. However, it seems to provide parameter estimates that are in the general vicinity of the true values. This could make it useful for generating educated guesses for the parameters, which can then be refined as priors in multi-state fits.
