@@ -20,17 +20,17 @@ In `example.py`, an example calculation demonstrates the approach using a predef
 
 ### Results
 
-The results for `example.py`, obtained after 100 training epochs, are as follows:
+The results for `example.py`, obtained after 60 training epochs, are as follows:
 
 
 Parameter | Expected | Predicted
-----------|----------|-----------------------
-A0        | 0.5      | 0.4569557 ± 0.0000061
-A1        | 0.3      | 0.3021244 ± 0.0000097 
-A2        | 0.2      | 0.2408266 ± 0.0000102
-E0        | 0.6      | 0.5940353 ± 0.0000028 
-E1        | 0.9      | 0.8352580 ± 0.0000121
-E2        | 1.2      | 1.1914995 ± 0.0000205
+----------|----------|------------
+A0        | 0.5      | 0.46447
+A1        | 0.3      | 0.32274
+A2        | 0.2      | 0.21273
+E0        | 0.6      | 0.59471
+E1        | 0.9      | 0.85559
+E2        | 1.2      | 1.21536
 
 
 

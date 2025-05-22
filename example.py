@@ -36,7 +36,6 @@ def main():
     for i, (E, A) in enumerate(zip(energies, overlaps)):
         ax.plot(T, A * np.exp(-E * T), lw=0.8, ls='--', color='black')
 
-    ax.set_ylim(5e-9, 5)
     fig.savefig("correlator.png", dpi=300)
 
 
@@ -47,7 +46,7 @@ def main():
     model = invlap.model.MassNN(T.shape[0], len(energies)).double().to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
 
-    model, loss_values = invlap.train.train(model, optimizer, jk_data, ys, device, epochs=100)
+    model, loss_values = invlap.train.train(model, optimizer, jk_data, ys, device, epochs=60)
 
     fig, ax = plt.subplots()
     ax.plot(loss_values)
@@ -58,10 +57,9 @@ def main():
     beta_pred, beta_pred_std = invlap.qstatpy_extention.model_prediction(db, ("Correlator", "jk_mean"), ("Correlator", "beta"), model, device)
 
     for i in range(len(beta_expected)):
-        print(f"Expected: {beta_expected[i]:.4f}, Predicted: {beta_pred[i]:.7f} ± {beta_pred_std[i]:.7f}")
+        print(f"Expected: {beta_expected[i]:.4f}, Predicted: {beta_pred[i]:.5f} ± {beta_pred_std[i]:.5f}")
 
-    
-
+    torch.save(model, "model.pth")
 
     
 if __name__ == "__main__":
